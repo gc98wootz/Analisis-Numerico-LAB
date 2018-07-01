@@ -5,25 +5,11 @@
 
 using namespace std;
 
+
 float funcion(float x)
 {
 return sin(x);
 }
-
-float trapecio(float a, float b, int n)
-{
-  float h=(b-a)/n;
-  float sumatoria=0;
-  for (int j=0;j<n;j++)
-    sumatoria=sumatoria+funcion(a+j*h);
-
-  return (h/2)*(funcion(a)+2*sumatoria+funcion(b));
-}
-
-/*float trapecio_(float a, float b){
-return (b-a)*(funcion(a)+funcion(b))/2;
-}*/
-
 
 float Simpson1_3(float a,float b,int n){
    float sumatoria=0;
@@ -43,11 +29,7 @@ float Simpson1_3(float a,float b,int n){
     return sumatoria;
 }
 
-
-int main(){
-  //float (*f)(float);
-  //f= funcion;
-  cout<<"Resultado TRAPECIO " <<trapecio(pi,0,6)<<endl;
-  cout<<"Resultado Simpson 1/3"<<Simpson1_3(pi,0,6)<<endl;
+int main(int argc, char const *argv[]) {
+  cout<<Simpson1_3(pi,0,6)<<endl;
   return 0;
 }
