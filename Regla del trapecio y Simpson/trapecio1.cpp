@@ -42,12 +42,30 @@ float Simpson1_3(float a,float b,int n){
    sumatoria=(h*(funcion(a)+4*S1+2*S0+funcion(b))/3.0);
     return sumatoria;
 }
-
+float Simpson3_8(float a,float b,int n){
+  float sumatoria=0;
+  float h;
+  float S0,S1;
+  h=(b-a)/n;
+  S0=S1=0;
+  for(int i=1;i<n-1;i++){
+    if(i%3)
+      S0+=2*funcion(a+i*h);
+    else
+      S1+=3*funcion(a+i*h);
+  }
+  //cout<<S0<<endl;
+  //cout<<S1<<endl;
+  sumatoria=(((3*h)/8)*(funcion(a)+S0+S1+funcion(b)));
+  //cout<<sumatoria<<endl;
+  return sumatoria;
+}
 
 int main(){
   //float (*f)(float);
   //f= funcion;
-  cout<<"Resultado TRAPECIO " <<trapecio(pi,0,6)<<endl;
-  cout<<"Resultado Simpson 1/3"<<Simpson1_3(pi,0,6)<<endl;
+  cout<<"Resultado TRAPECIO :\t" <<trapecio(pi,0,6)<<endl;
+  cout<<"Resultado Simpson 1/3 :\t"<<Simpson1_3(pi,0,6)<<endl;
+  cout<<"Resultado Simpson 3/8 :\t"<<Simpson3_8(pi,0,6)<<endl;
   return 0;
 }
