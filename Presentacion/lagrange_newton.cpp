@@ -1,6 +1,6 @@
 
 #include <iostream>
-//#include "sistema_ecuaciones.cpp"
+
 #include <map>
 #include <utility>
 #include <string>
@@ -34,31 +34,15 @@ double *met_gauss_piv(double A[filas][columnas], double b[filas]);
 
 int main()
 {
-	/*
-	f[0] = map[x] map[y] map[z] -> map_evalua(map, x,y,z)
-	f[1] = map[x] map[y] map[z]
-	f[n-1] = map[x] map[y] map[z]
-	*/
-	/*
-	x²+y²+z²=2
-	x+y+z = 1
-	x²+y²-z=0
-	*/
-	/*
-	cos(x-y) + e^(cosx-y) = 1
-	arctan(xy) + ln(x²+y³) = 2
-	*/
 
-    //F_
-    //-------------------------------
 
 	vector<map<string, pdd>> F_;
 
 	map<string, pdd> f1;
-	f1["x"] = pdd(1,2); //pdd(coeficiente, expondente) ->x²
+	f1["x"] = pdd(1,2);
 	f1["y"] = pdd(1,2);
 	f1["z"] = pdd(1,2);
-	f1["zz"] = pdd(-2,1);//"zz" simboliza la constane: pdd(coeficiente, expondente) -> -2(1)¹
+	f1["zz"] = pdd(-2,1);
 
 	F_.push_back(f1);
 

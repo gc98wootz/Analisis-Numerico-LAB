@@ -1,16 +1,19 @@
-#include <iostream>
-#include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#define MAX 6
+#include <iostream>
 #define pi 3.14159265358979
+
 using namespace std;
 
-
-float funcion(float x){
-  return sin(x);
-  //return pow(x,2);
+float funcion(float x)
+{
+  //return sin(x);
+  return pow(x,4);
 }
 
-float trapecio(float (*f)(float),float a, float b, int n)
+float trapecio(float a, float b, int n)
 {
   float h=(b-a)/n;
   float sumatoria=0;
@@ -19,14 +22,33 @@ float trapecio(float (*f)(float),float a, float b, int n)
 
   return (h/2)*(funcion(a)+2*sumatoria+funcion(b))*-1;
 }
-
-
-
-int main(int argc, char const *argv[]) {
-  double a[][];
-  for(int n=2;n<6;n++){
-    cout<<"TRAPECIO\t"<<trapecio(funcion,pi/2,0,n)<<endl;
-  }
-  romberg();
-  return 0;
+int main()
+{
+    double s[MAX];
+    int i,k;
+    double var ;
+    for (i = 1; i< MAX; i++)
+      s[i] = 1;
+    for (k=1; k< MAX; k++)
+    {
+      for (i=1; i <=k; i++)
+      {
+        if (i==1)
+        {
+          var = s[i];
+          s[i] = trapecio(0,1,MAX);
+          //s[i] = Trap(0, 1, pow(2, k-1)); // sub-routine trapeze
+        } // integrated from 0 a pow() is the number
+        else
+        {
+          s[k]= ( pow(4 , i-1)*s[i-1]-var )/(pow(4, i-1) - 1);
+          var = s[i];
+          s[i]= s[k];
+        }
+      }
+      for (i=1; i <=k; i++)
+        printf (" %f ", s[i]);
+      printf ("\n");
+}
+return 0;
 }

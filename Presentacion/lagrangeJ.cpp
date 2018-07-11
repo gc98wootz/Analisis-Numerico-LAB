@@ -37,11 +37,7 @@ void Lagrange(vPunto &V,double &r){
   cout<<r<<" "<<total<<endl;
 }
 
-void newton(vPunto &V,double &r){
-  int n=V.size();
-  double matriz[n][n+1];
-  for(int i=n;i<)
-}
+
 int main(int argc, char const *argv[]) {
   Puntos a(1,3);
   Puntos b(2,14);
