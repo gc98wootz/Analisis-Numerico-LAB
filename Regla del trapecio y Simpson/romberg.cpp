@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define MAX 6
+#define MAX 4
 #include <iostream>
 #define pi 3.14159265358979
 
@@ -10,7 +10,8 @@ using namespace std;
 float funcion(float x)
 {
   //return sin(x);
-  return pow(x,4);
+  //return pow(x,4);
+  return exp(-2*x);
 }
 
 float trapecio(float a, float b, int n)
@@ -45,10 +46,14 @@ int main()
           var = s[i];
           s[i]= s[k];
         }
+        for (i=1; i <=k; i++)
+          printf (" %f ", s[i]);
       }
-      for (i=1; i <=k; i++)
+      //printf (" %f ", s[MAX-1]);
+      /*for (i=1; i <=k; i++)
         printf (" %f ", s[i]);
-      printf ("\n");
+      printf ("\n");*/
 }
+
 return 0;
 }

@@ -1,7 +1,13 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<math.h>
-#define f(x) 1/(x)
+//#define f(x) 1/(x)
+#include <iostream>
+using namespace std;
+
+float f(float x){
+  return exp(-2*x);
+}
 int main(){
     float x0,xn,t[10][10],h,sm,sl,a;
     int i,k,c,r,m,p,q;
@@ -26,6 +32,11 @@ int main(){
             t[m+k][k]=(pow(4,k)*t[m+k][k-1]-t[m+k-1][k-1])/(pow(4,k)-1);
         }
     }
-    printf("Romberg estimate of integration =%f",t[p][q]);
+    for(c=0;c<=p;c++){
+      for(i=0;i<=q;i++)
+        printf("%f - ",t[p][q]);
+      cout<<endl;
+    }
+    //printf("Romberg estimate of integration =%f",t[p][q]);
     return 0;
-}s
+}

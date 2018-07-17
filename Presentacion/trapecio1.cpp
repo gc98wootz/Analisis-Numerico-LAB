@@ -7,7 +7,9 @@ using namespace std;
 
 float funcion(float x)
 {
-  return sin(x);
+    return cos(2*x);
+  //return exp(-2*x);
+  //return sin(x);
   //return pow(x,4);
 }
 
@@ -85,6 +87,9 @@ int main(){
   cout<<"Resultado Simpson 1/3 :\t"<<Simpson1_3(pi/2,0,96)<<endl;
   cout<<"Resultado Simpson 3/8 :\t"<<Simpson3_8(pi/2,0,96)<<endl;*/
   //cout<<funcion(pi/2);
-  romberg(pi/2,0,6);
+  for(int i=2;i<=10;i+=2)
+    cout<<(Simpson1_3(0,2,i)+cos(2))<<endl;
+
+  //romberg(1,0,4);
   return 0;
 }
