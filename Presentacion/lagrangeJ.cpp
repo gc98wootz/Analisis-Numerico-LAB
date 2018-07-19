@@ -34,19 +34,24 @@ void Lagrange(vPunto &V,double &r){
     }
     total +=L;
     }
-  cout<<r<<" "<<total<<endl;
+  cout<<total<<endl;
 }
 
 
 int main(int argc, char const *argv[]) {
-  Puntos a(1,3);
-  Puntos b(2,14);
-  Puntos c(0,2);
-  Puntos d(-1,-1);
-  vPunto vect={a,b,c,d};
-  double p=3;
+  Puntos a(1,2);
+  Puntos b(0,1);
+  Puntos c(-1,1);
+  vPunto vect={a,b,c};
+  double p=1;
+  double x=3;
+  double y=5;
+  double z=7;
   Lagrange(vect , p);
-
+  Lagrange(vect , x);
+  Lagrange(vect , y);
+  Lagrange(vect , z);
+  /*
   Puntos e(-2,13);
   Puntos f(1,1);
   Puntos g(-1,-1);
@@ -54,6 +59,6 @@ int main(int argc, char const *argv[]) {
   Puntos i(2,17);
   vPunto vect2={e,f,g,h,i};
   double q=4;
-  Lagrange(vect2 , q);
+  Lagrange(vect2 , q);*/
   return 0;
 }

@@ -9,9 +9,9 @@ using namespace std;
 
 float funcion(float x)
 {
-  //return sin(x);
+  return sin(x);
   //return pow(x,4);
-  return exp(-2*x);
+  //return exp(-2*x);
 }
 
 float trapecio(float a, float b, int n)
@@ -37,8 +37,8 @@ int main()
         if (i==1)
         {
           var = s[i];
-          s[i] = trapecio(0,1,MAX);
-          //s[i] = Trap(0, 1, pow(2, k-1)); // sub-routine trapeze
+          //s[i] = trapecio(0,pi/2,MAX);
+          s[i] = trapecio(0, 1, pow(2, k)); // sub-routine trapeze
         } // integrated from 0 a pow() is the number
         else
         {
@@ -47,7 +47,8 @@ int main()
           s[i]= s[k];
         }
         for (i=1; i <=k; i++)
-          printf (" %f ", s[i]);
+          //cout<<s[i]<<"\t";
+          printf (" %f \n", s[i]);
       }
       //printf (" %f ", s[MAX-1]);
       /*for (i=1; i <=k; i++)

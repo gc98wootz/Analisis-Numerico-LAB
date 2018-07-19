@@ -7,9 +7,9 @@ using namespace std;
 
 float funcion(float x)
 {
-    return cos(2*x);
-  //return exp(-2*x);
-  //return sin(x);
+  //return cos(2*x);
+  return exp(cos(2*x));
+  //return sin(x*x);
   //return pow(x,4);
 }
 
@@ -76,20 +76,47 @@ float Simpson38(float a, float b,int n ){
     }
     return ( 3 * h / 8 ) * sum ;
 }
+
+/*
+float Simpson38(float a, float b,int n ){
+    float value;
+    float h = (b - a)/ n;
+    float sumA=0,sumB=0,sumC=0;
+    float limite1 =(n/3)-1;
+    float limite2=n/3;
+    float x=b;
+    float ih=3*h;
+    for(int i=1;i<=limite1;i++){
+      x+=ih;
+      sumA+=funcion(x);}
+    x=b+h;
+    for(int i=1;i<=limite2;i++){
+      sumB+=funcion(x);
+      x+=ih;
+    }
+    x=b+(h*2);
+    for(int i=1;i<=limite2;i++){
+        sumC+=funcion(x);
+        x+=ih;
+      }
+    x=b+(2*h);
+    return ( 3 * h / 8 ) *(funcion(a)+(2*sumA)+(3*sumB)+(3*sumC)+funcion(b));
+}*/
 int main(){
   //float (*f)(float);
   //f= funcion;
   /*cout<<"\t N\t\ttrapecio\tsimpson1/3\tsimpson3/8"<<endl;
-  for(int i=6;i<36;i+=6){
+  for(int i=3;i<36;i+=6){
     cout<<"\t"<<i<<"\t\t"<<trapecio(pi/2,0,i)<<"\t\t"<<Simpson1_3(pi/2,0,i)<<"\t\t"<<Simpson38(0,pi/2,i)<<endl;
   }*/
   /*cout<<"Resultado TRAPECIO :\t" <<trapecio(pi/2,0,96)<<endl;
   cout<<"Resultado Simpson 1/3 :\t"<<Simpson1_3(pi/2,0,96)<<endl;
   cout<<"Resultado Simpson 3/8 :\t"<<Simpson3_8(pi/2,0,96)<<endl;*/
   //cout<<funcion(pi/2);
-  for(int i=2;i<=10;i+=2)
-    cout<<(Simpson1_3(0,2,i)+cos(2))<<endl;
-
-  //romberg(1,0,4);
+/*  for(int i=2;i<=12;i+=2)
+    cout<<Simpson38(0,1,i)<<endl;
+*/
+  cout<<Simpson38(pi*-1,pi,15)<<endl;
+  //romberg(pi/2,0,9);
   return 0;
 }

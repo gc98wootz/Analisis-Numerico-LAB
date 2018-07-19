@@ -9,7 +9,7 @@ float a,b,h,s1,s2,stt;*/
 
 float funcion(float x)
 {
-return sin(x);
+return sin(pow(x,2));
 }
 void Simpson3_8(float a,float b,int n){
   float sumatoria=0;
@@ -58,5 +58,5 @@ cout<<"S2:"<<s2<< endl;
 
 system("pause");
  return 0;*/
- Simpson3_8(pi,0,6);
+ Simpson3_8(0,1,12);
 }

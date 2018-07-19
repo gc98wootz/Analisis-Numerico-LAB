@@ -50,7 +50,7 @@ int main(int argc, char const *argv[]) {
   vPunto vect={a,b,c,d};
   double p=3;
   Lagrange(vect , p);
-
+  /*
   Puntos e(-2,13);
   Puntos f(1,1);
   Puntos g(-1,-1);
@@ -58,6 +58,6 @@ int main(int argc, char const *argv[]) {
   Puntos i(2,17);
   vPunto vect2={e,f,g,h,i};
   double q=4;
-  Lagrange(vect2 , q);
+  Lagrange(vect2 , q);*/
   return 0;
 }
